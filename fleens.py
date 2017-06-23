@@ -22,17 +22,17 @@ def main():
 		new_fleen = Fleen(i, (h + HAIR_DIFF) % 5, (e + EYE_DIFF) % 5, (n + NOSE_DIFF) % 5, (s + SHOES_DIFF) % 5)
 		fleens.append(new_fleen)
 
-	print("Hair difference: %i" % HAIR_DIFF)
-	for i in range(0, 3):
-		print("Zoombini%i hair: %i" % (i + 1, zoombinis[i].hair))
-		print("Fleen%i hair: %i" % (i + 1, fleens[i].hair))
+	print("fleens[0].hair = %s" % fleens[0].hair)
+	print("fleens[0].eyes = %s" % fleens[0].eyes)
+	print("fleens[0].nose = %s" % fleens[0].nose)
+	print("fleens[0].shoes = %s" % fleens[0].shoes)
 
 	print("")
 
-	print("Eye difference: %i" % EYE_DIFF)
-	for i in range(0, 3):
-		print("Zoombini%i eyes: %i" % (i + 1, zoombinis[i].eyes))
-		print("Fleen%i eyes: %i" % (i + 1, fleens[i].eyes))
+	print("zoombinis[0].hair = %s" % zoombinis[0].hair)
+	print("zoombinis[0].eyes = %s" % zoombinis[0].eyes)
+	print("zoombinis[0].nose = %s" % zoombinis[0].nose)
+	print("zoombinis[0].shoes = %s" % zoombinis[0].shoes)
 
 	for line in fleens[0].drawing:
 		print line

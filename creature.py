@@ -16,6 +16,14 @@ import random
 # print("   ----")
 # print("<___||___>")
 
+
+PINK = '\033[95m' #0
+BLUE = '\033[94m' #1
+GREEN = '\033[92m' #2
+YELLOW = '\033[93m' #3
+RED = '\033[91m' #4
+ENDC = '\033[0m'
+
 class Creature():
     def __init__(self, id, hair, eyes, nose, shoes):
         self.id = id
@@ -29,6 +37,7 @@ class Fleen(Creature):
         Creature.__init__(self, id, hair, eyes, nose, shoes)
         self.species = "Fleen"
         self.drawing = self._draw_me()
+        # print GREEN + "green" + ENDC
 
     def _draw_me(self):
         drawing = []
@@ -46,16 +55,20 @@ class Fleen(Creature):
         return drawing
 
     def _draw_hair(self):
-        return "   ****"
+        color = get_color(self.hair)
+        return str(color) + "   ****" + str(ENDC)
 
     def _draw_eyes(self):
-        return "  | oo |"
+        color = get_color(self.eyes)
+        return "  | " + str(color) + "oo" + str(ENDC) + " |"
 
     def _draw_nose(self):
-        return "  | [] |"
+        color = get_color(self.nose)
+        return "  | " + str(color) + "[]" + str(ENDC) + " |"
 
     def _draw_shoes(self):
-        return "<___||___>"
+        color = get_color(self.shoes)
+        return str(color) + "<___||___>" + str(ENDC)
 
 
 class Zoombini(Creature):
@@ -78,13 +91,32 @@ class Zoombini(Creature):
         return drawing
 
     def _draw_hair(self):
-        return "   ******"
+        color = get_color(self.hair)
+        return str(color) + "   ******" + str(ENDC)
 
     def _draw_eyes(self):
-        return " (  o  o  )"
+        color = get_color(self.eyes)
+        return " (  " + str(color) + "o  o" + str(ENDC) + "  )"
 
     def _draw_nose(self):
-        return " (   ()   )"
+        color = get_color(self.nose)
+        return " (   " + str(color) + "()" + str(ENDC) + "   )"
 
     def _draw_shoes(self):
-        return "(_\\\\_||_//_)"
+        color = get_color(self.shoes)
+        return str(color) + "(_\\\\_||_//_)" + str(ENDC)
+
+
+def get_color(num):
+    color = ""
+    if num == 0:
+        color = PINK
+    elif num == 1:
+        color = BLUE
+    elif num == 2:
+        color == GREEN
+    elif num == 3:
+        color = YELLOW
+    elif num == 4:
+        color = RED
+    return color
