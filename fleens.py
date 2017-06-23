@@ -34,6 +34,14 @@ def main():
 		print("Zoombini%i eyes: %i" % (i + 1, zoombinis[i].eyes))
 		print("Fleen%i eyes: %i" % (i + 1, fleens[i].eyes))
 
+	for line in fleens[0].drawing:
+		print line
+
+	print("")
+
+	for line in zoombinis[0].drawing:
+		print line
+
 
 
 
